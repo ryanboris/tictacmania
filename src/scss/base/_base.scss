@@ -1,6 +1,11 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
-  font: 14px 'Century Gothic', Futura, sans-serif;
-  margin: 20px;
+  font-size: 2rem;
+  font-family: $roboto;
+  margin: 4%;
 }
 
 ol,

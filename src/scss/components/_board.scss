@@ -1,5 +1,15 @@
-.board-row:after {
-  clear: both;
-  content: '';
-  display: table;
+.board {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+
+  &-row:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  &-status {
+    margin: 20px;
+  }
 }
