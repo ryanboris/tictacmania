@@ -1,13 +1,29 @@
 import React from 'react'
 import Square from './Square'
+import Scoreboard from './Scoreboard'
 
 const Board = () => {
   const renderSquare = i => <Square value={i} />
+  const renderScoreboard = // Tuple String -> Tuple Number -> JSX Scoreboard 
+    ([p1, p2]=['You','The World'], [p1Score, p2Score]=[0,0]) => (
+      <Scoreboard 
+        p1={p1} 
+        p2={p2} 
+        p1Score={p1Score}
+        p2Score={p2Score}
+      />
+    )
   const status = 'Next player: X'
 
   return (
     <div class="board">
-      <div className="board-status">{status}</div>
+      <div className="board-status">
+        {renderScoreboard()} {/* The defaults kick in (look at the signature) */}
+                             {/* Here's an example of how to use it: 
+                              {renderScoreboard(['Ryan', 'The Law'], [0, 2])} */}
+        {status}
+        
+      </div>
       <div className="board-row">
         {renderSquare(0)}
         {renderSquare(1)}
@@ -25,6 +41,21 @@ const Board = () => {
       </div>
     </div>
   )
+}
+
+
+// -----Helpers------
+
+function renderScoreboard([p1, p2], [p1Score, p2Score]) { 
+  return (
+    <Scoreboard 
+      p1={p1} 
+      p2={p2} 
+      p1Score={p1Score}
+      p2Score={p2Score}
+    />
+  )
+
 }
 
 export default Board
