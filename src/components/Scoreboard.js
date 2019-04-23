@@ -1,4 +1,6 @@
 import React from 'react'
+import '../scss/components/_scoreboard.scss'
+import '../scss/components/_board.scss'
 
 
 export default function Scoreboard({p1, p2, p1Score, p2Score}) {
